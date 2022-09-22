@@ -1,0 +1,20 @@
+{
+  "name": "yoyofighter",
+  "version": "1.0.0",
+  "description": "A Fighting game with YoYos",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Fighting",
+    "Game",
+    "YoYo"
+  ],
+  "author": "Christian Rodriguez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "socket.io": "^4.5.2"
+  }
+}
