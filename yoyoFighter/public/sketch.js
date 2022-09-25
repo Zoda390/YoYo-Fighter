@@ -166,9 +166,8 @@ function setup() {
         element.addEventListener("contextmenu", (e) => e.preventDefault());
     }
     socket = io.connect('http://localhost:3000');
-    let newPlayer = new Player();
-    socket.emit('new_player', newPlayer);
-    player = new Player(width/2, 0, 255, 0, 0);
+    player = new Player(width/2, 0, random(0, 255), random(0, 255), random(0, 255));
+    socket.emit('new_player', player);
 }
 
 function draw() {
