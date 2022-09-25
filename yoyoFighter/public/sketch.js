@@ -69,6 +69,7 @@ class Player{
         this._color = {r: r, g: g, b: b};
         this.size = {x: 20, y: 30};
         this.yoyo = new YoYo(this.pos.x, this.pos.y+10, this._color.r-10, this._color.g-10, this._color.b-10, this.pos.x, this.pos.y);
+        this.gp = 0;
     }
 
     render(){
@@ -119,6 +120,13 @@ class Player{
     }
 
     takeInput(){
+        if(navigator.getGamepads()[0] != null){
+            this.gp = navigator.getGamepads()[0];
+            this.acc.x = this.gp.axes[0];
+            this.acc.y = this.gp.axes[1];
+            this.yoyo.acc.x = 20*this.gp.axes[2];
+            this.yoyo.acc.y = 20*this.gp.axes[3];
+        }
         //Player Controls
         if(keyIsDown(87)){ //w
             this.acc.y = -1;
